@@ -2,7 +2,8 @@
 <html>
 <body>
 
-<p id="demo"></p>
+<p id="p1"></p>
+<p id="p2"></p>
 
 <script>
 
@@ -25,11 +26,37 @@ const matrix = [
 	[128, 2088, 3422, 111, 3312, 740, 3024, 1946, 920, 131, 112, 477, 3386, 2392, 1108, 2741]
 ];
 
+/* region 1 */
 const sum = matrix
-	.map(value => Math.max(...value) - Math.min(...value))
+	.map(row => Math.max(...row) - Math.min(...row))
 	.reduce((a, b) => a + b);
-
-document.getElementById("demo").innerHTML = '' + sum; // 47623
+/* endregion 1 */
+	
+/* region 2 */	
+const findMatch = (value, divisors) => {
+	var result = undefined;
+	divisors.forEach(divisor => {
+		if (value % divisor === 0) {
+			result = value / divisor;
+		}
+	});
+	return result;
+};
+const sum2 = matrix
+	.map(row => {
+		for (var i = 0; i < row.length; i++) {
+			const divisors = row.slice(0, i).concat(row.slice(i + 1));
+			const result = findMatch(row[i], divisors);
+			if (typeof result !== 'undefined') {
+				return result;
+			}
+		}
+	})
+	.reduce((a, b) => a + b);
+/* endregion 2 */
+	
+document.getElementById("p1").innerHTML = 'Part 1: ' + sum;
+document.getElementById("p2").innerHTML = 'Part 2: ' + sum2;
 </script> 
 
 </body>
