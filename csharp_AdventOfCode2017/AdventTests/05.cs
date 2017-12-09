@@ -1,47 +1,42 @@
 ﻿using AdventOfCode2017;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace AdventTests
 {
     [TestClass]
-    public class UnitTest1
+    public class _05
     {
-        [TestMethod]
-        public void PartOneExample()
-        {
-            var inputLines = new int[] { 0, 3, 0, 1, -3 }.ToList();
-            Assert.AreEqual(5, DayFive.ComputePartOne(inputLines));
-        }
-
-        [TestMethod]
-        public void PartOne()
-        {
-            var inputLines = File
+        public static List<int> NewInputListInstance => File
                 .ReadAllLines(@"..\..\input\05\part1.txt")
                 .Select(s => int.Parse(s))
                 .ToList();
+        public static List<int> NewExampleListInstance => new List<int>(new[] { 0, 3, 0, 1, -3 });
 
-            Assert.AreEqual(359348, DayFive.ComputePartOne(inputLines));
+        [TestMethod]
+        public void Day5Part1Example()
+        {
+            Assert.AreEqual(5, DayFive.ComputePartOne(NewExampleListInstance));
         }
 
         [TestMethod]
-        public void PartTwoExample()
+        public void Day5Part1()
         {
-            var inputLines = new int[] { 0, 3, 0, 1, -3 }.ToList();
-            Assert.AreEqual(10, DayFive.ComputePartTwo(inputLines));
+            Assert.AreEqual(359348, DayFive.ComputePartOne(NewInputListInstance));
         }
 
         [TestMethod]
-        public void PartTwo()
+        public void Day5Part2Example()
         {
-            var inputLines = File
-                .ReadAllLines(@"..\..\input\05\part1.txt")
-                .Select(s => int.Parse(s))
-                .ToList();
+            Assert.AreEqual(10, DayFive.ComputePartTwo(NewExampleListInstance));
+        }
 
-            Assert.AreEqual(27688760, DayFive.ComputePartTwo(inputLines));
+        [TestMethod]
+        public void Day5Part2()
+        {
+            Assert.AreEqual(27688760, DayFive.ComputePartTwo(NewInputListInstance));
         }
     }
 }
