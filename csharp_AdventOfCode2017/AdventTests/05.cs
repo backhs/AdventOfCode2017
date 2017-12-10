@@ -16,27 +16,15 @@ namespace AdventTests
         public static List<int> NewExampleListInstance => new List<int>(new[] { 0, 3, 0, 1, -3 });
 
         [TestMethod]
-        public void Day5Part1Example()
-        {
-            Assert.AreEqual(5, DayFive.ComputePartOne(NewExampleListInstance));
-        }
+        public void Day5Part1Example() => Assert.AreEqual(5, DayFive.ComputePartOne(NewExampleListInstance));
 
         [TestMethod]
-        public void Day5Part1()
-        {
-            Assert.AreEqual(359348, DayFive.ComputePartOne(NewInputListInstance));
-        }
+        public void Day5Part1() => Assert.AreEqual(359348, DayFive.ComputePartOne(NewInputListInstance));
 
         [TestMethod]
-        public void Day5Part2Example()
-        {
-            Assert.AreEqual(10, DayFive.ComputePartTwo(NewExampleListInstance));
-        }
+        public void Day5Part2Example() => Assert.AreEqual(10, DayFive.ComputePartTwo(NewExampleListInstance));
 
         [TestMethod]
-        public void Day5Part2()
-        {
-            Assert.AreEqual(27688760, DayFive.ComputePartTwo(NewInputListInstance));
-        }
+        public void Day5Part2() => Assert.AreEqual(27688760, DayFive.ComputePartTwo(NewInputListInstance));
     }
 }
