@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="05.cs" />
+    <Compile Include="07.cs" />
     <Compile Include="06.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="input\05\part1.txt" />
+    <Content Include="input\07\part1.example.txt" />
+    <Content Include="input\07\part1.txt" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
